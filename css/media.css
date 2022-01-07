@@ -1,0 +1,163 @@
+@media (max-width: 960px) {
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__menu ul {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 78px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 5px solid #e8603c;
+  }
+
+  .header__menu li {
+    display: block;
+    text-align: center;
+  }
+
+  .header__menu li + li {
+    margin-left: 0;
+  }
+
+  .header__menu a {
+    font-weight: 400;
+    display: block;
+    padding: 8px 0 5px;
+  }
+
+  .header__menu li + li a {
+    border-top: 1px solid #b9b9b9;
+  }
+
+  .recent__inner {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+
+  .recent__item {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+
+  .recent__box img {
+    width: 100%;
+  }
+
+  .slider__inner::before, .slider__inner::after {
+    display: none;
+  }
+
+  .footer__inner::before, .footer__inner::after {
+    display: none;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .footer__inner {
+    flex-wrap: wrap;
+  }
+
+  .footer__item-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer__inner {
+    justify-content: space-around;
+  }
+
+  .item {
+    padding-left: 15px;
+  }
+
+  .item__title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .items__inner {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .items {
+    padding: 20px 0 43px;
+  }
+
+  .item-info {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .thumbs {
+    display: none;
+  }
+
+  .slider__inner {
+    margin-bottom: 5px;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .item {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .item-info {
+    padding-bottom: 0;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .footer__item-contact {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .footer__item-widget {
+    width: 100%;
+  }
+
+  .footer__inner {
+    justify-content: space-between;
+  }
+
+  .slider__item-desc {
+    max-width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .slick-next {
+    display: none;
+  }
+
+  .slick-prev {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .recent__item {
+    width: 100%;
+  }
+}
+
+
+
+
+@media (min-width: 960px) {
+  .header__menu ul {
+    display: block !important;
+  }
+}

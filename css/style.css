@@ -1,0 +1,411 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: 'Bebas Neue', cursive;
+  overflow-x: hidden;
+}
+
+a {
+  color: #b9b9b9; /* Задает всем ссылкам на сайте цвет #b9b9b9 */
+  display: inline-block; /* Делает ссылки строчно-блочными, блочность задается, чтобы можно было применять разные CSS свойства к ссылкам */
+  text-decoration: none; /* Убирает подчеркивание у ссылок */
+}
+
+ul {
+  list-style: none; /* Убирает маркеры у тегов li внутри тега ul */
+  margin: 0; /* Убирает внешние отступы у тегов li внутри тега ul */
+  padding: 0; /* Убирает внутренние отступы у тегов li внутри тега ul */
+}
+
+li {
+  display: inline-block; /* Задает всем тегам li строчно-блочное поведение, чтобы все элементы списка стали в одну линию */
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 970px; /* Максимальная ширина, не допускает появление нижнего скролла */
+  margin: 0 auto; /* Внешние отступы, центрируют (выравнивают) контентную часть сайта */
+  padding: 0 15px; /* Внутренние отступы задаются, чтобы контентная часть не прилипала к краям экрана на маленьких разрешениях */
+}
+
+/* Header */
+
+.header {
+  background-color: #f9f9f9; /* Фоновый цвет header */
+}
+
+.header__inner {
+  display: flex; /* Создает флекс контейнер с элементами логотипа и меню */
+  justify-content: space-between; /* Распределяет элементы внутри флекс контейнера, в начале и конце оси, прилегая в плотную к краям */
+  height: 78px; /* Задает высоту (шапки) обертки внутри с логотипом и меню */
+  align-items: center; /* Выравнивает элементы логотип и меню внутри флекс контейнера по центру */
+}
+
+.header__logo a {
+  color: #e8603c; /* Задает цвет ссылки для логотипа */
+  font-size: 36px; /* Задает размер шрифта для ссылки */
+  font-weight: 400; /* Насыщенность шрифта */
+  
+}
+
+.header__logo a span {
+  color: #f3af9d; /* Задает цвет ссылки для второй части логотипа, обернутой в span */
+}
+
+.header__menu li + li { /* Убирает левый внешний отступ у первого элемента в списке меню. Селектор '+' всегда пропускает первый элемент, при условии, что у элементов есть родитель, они одинаково называются, и между ними нет других тегов. После начинаются применяться указанные свойства начиная со второго и до последнего элемента. */
+  margin-left: 28px; /* Добавляет внешние отступы слева, для каждого элемента li внутри списка меню */
+}
+
+.header__menu a {
+  color: #b9b9b9; /* Задает цвет ссылки для меню */
+  font-size: 16px; /* Задает размер шрифта для ссылки */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Делает все буквы шрифта заглавными */
+  padding-top: 5px; /* Задает верхний внутренний отступ */
+  padding-bottom: 8px; /* Задает нижний внутренний отступ */
+}
+
+.header__drop-down--active a {
+  color: #e8603c;
+}
+
+/* Код относится к адаптивному меню */
+.header__menu-btn {
+  width: 30px;
+  display: none;
+}
+
+.header__menu-row {
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  margin-bottom: 4px;
+}
+/* Конец кода адаптивного меню */
+
+.slider {
+  overflow-x: hidden;
+}
+
+.slider__inner {
+  margin-bottom: 17px;
+  position: relative;
+}
+
+.slider__inner::before, .slider__inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #f3af9d;
+  z-index: 2;
+}
+
+.slider__inner::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.slider__inner::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.slider__item {
+  height: 400px;
+  position: relative;
+  background-size: cover; /* замостить изображение */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumbs__item {
+  width: 140px;
+  height: 120px;
+  background-size: cover; /* замостить изображение */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.slider__item-desc {
+  background-color: rgb(232, 102, 60);
+  opacity: 0.8;
+  color: #fff;
+  max-width: 413px;
+  padding: 22px 29px 25px 14px;
+  position: absolute;
+  bottom: 31px;
+  left: 36px;
+}
+
+.item-desc__title {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.item-desc__text {
+  font-family: 'Neue Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+}
+
+.thumbs .slick-track div + div {
+  margin-left: 20px;
+}
+
+.thumbs .slick-slide {
+ max-width: 140px; 
+}
+
+.slick-prev {
+  position: absolute;
+  width: 36px;
+  height: 52px;
+  background-image: url(../images/previous.png);
+  left: 23px;
+  top: 185px;
+  background-position: top center;
+  background-size: cover; /* сохраняет пропорций изображения так, чтобы его ширина или высота равнялась ширине или высоте блока */
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.slick-prev {
+  position: absolute;
+  width: 36px;
+  height: 52px;
+  background-image: url(../images/slider/previous.png);
+  left: 23px;
+  top: 185px;
+  background-position: top center;
+  background-size: cover; /* сохраняет пропорций изображения так, чтобы его ширина или высота равнялась ширине или высоте блока */
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.slick-next {
+  position: absolute;
+  width: 36px;
+  height: 52px;
+  background-image: url(../images/slider/next.png);
+  right: 23px;
+  top: 185px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.slick-prev:before, .slick-next:before {
+  display: none;
+}
+
+.slick-prev:hover, .slick-prev:focus {
+  background-image: url(../images/slider/previous.png); /* при наведении и фокусе на элемент, подгружается картинка */
+}
+
+.slick-next:hover, .slick-next:focus {
+  background-image: url(../images/slider/next.png); /* при наведении и фокусе на элемент, подгружается картинка */
+}
+
+.items {
+  padding: 32px 0 43px;
+}
+
+.items__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 275px;
+}
+
+.item__title {
+  font-size: 21px;
+  line-height: 24px;
+  color: #e8663c;
+  padding: 3px 0 0 70px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.item__text {
+  font-family: 'Neue Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #414141;
+  margin-bottom: 17px;
+}
+
+.item__button {
+  background-color: #e8603c;
+  width: 56px;
+  height: 33px;
+}
+
+.item__button a {
+  font-size: 12px;
+  color: #fff;
+  padding: 10px 18px;
+}
+
+.item__icons {
+  position: absolute;
+  top: -1;
+  left: 0;
+}
+
+.facebook-icons {
+  margin-top: 2px;
+}
+
+.offer-icons {
+  margin-top: 2px;
+}
+
+.recent__inner {
+  margin-bottom: 48px;
+}
+
+.recent__inner-title {
+  margin-bottom: 19px;
+  background-image: url(../images/line-bg.jpg);
+}
+
+.recent__inner-text {
+  font-size: 18px;
+  color: #e8603c;
+  padding-right: 20px;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.recent__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent__item {
+  width: 220px;
+}
+
+.recent__box {
+ display: flex;
+ flex-direction: column;
+}
+
+.recent__box img {
+  display: block;
+}
+
+.recent__text {
+  border: 1px solid #b9b9b9;
+  border-top: none;
+  padding: 13px;
+}
+
+.recent-text__title {
+  font-size: 18px;
+  color: #b9b9b9;
+}
+
+.recent-text__date a {
+  color: #e8663c;
+}
+
+.footer {
+  font-family: 'Neue Helvetica', 'Arial', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e8663c;
+  padding: 39px 41px 33px 35px;
+  position: relative;
+}
+
+.footer__inner::before, .footer__inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f3af9d;
+  z-index: 2;
+}
+
+.footer__inner::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.footer__inner::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.footer__item-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.footer__item-content {
+  width: 265px;
+}
+
+.footer__item-content p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  font-size: 12px;
+}
+
+.footer__item-widget {
+  width: 234px;
+}
+
+.footer__widget {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.footer__widget span {
+  color: #f3b29d;
+}
+
+.footer__widget:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer__widget-time a {
+  font-size: 12px;
+  line-height: 14px;
+  color: #f3b29d;
+  margin-bottom: 22px;
+}
+
+.footer__item-contact {
+  width: 265px;
+}
+
+.footer__item-contact p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
